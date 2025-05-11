@@ -1,0 +1,9 @@
+{
+  "dev_env_name": "__REPLACE_ME_dev_env_name",
+  "terraform_project_name": "__REPLACE_ME_cookiecutter.project_name",
+  "prod_env_name": "__REPLACE_ME_cookiecutter.prod_env_name",
+  "dev_backend_name": "__REPLACE_ME_cookiecutter.dev_backend_name",
+  "prod_backend_name": "__REPLACE_ME_cookiecutter.prod_backend_name",
+  "prod_workflow_name": "__REPLACE_ME_cookiecutter.prod_workflow_name",
+  "_copy_without_render": ["*.tf", "*.md"]
+}

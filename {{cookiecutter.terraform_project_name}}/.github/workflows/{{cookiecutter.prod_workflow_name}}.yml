@@ -1,0 +1,29 @@
+name: Production-Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual triggering of the workflow from the GitHub UI
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Custom display message
+        run: |
+          echo "Workflow is working!"
+
+      - name: Install Terraform specific version
+        uses: hashicorp/setup-terraform@v3 # Installs the specified Terraform version
+        with:
+          terraform_version: "1.10.5" # Specifies the exact Terraform version to use
+
+      - name: Terraform Fmt
+        run: |
+          terraform fmt -recursive
+          echo "----- Terraform formatting completed -----"
+          terraform validate
